@@ -1,6 +1,12 @@
 <?php
 
+use Core\Database;
+use Core\Post;
+
+$posts = Post::getAllPosts();
+
 view("index.view.php", [
-    'heading' => 'Home',
+    'heading' => 'Blog Posts',
+    'posts' => $posts
 ]);
 

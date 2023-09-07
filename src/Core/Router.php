@@ -20,16 +20,27 @@ class Router
         return $this->add('GET', $controller, $uri);
     }
 
+    public function post($uri, $controller) {
+        return $this->add('POST', $controller, $uri);
+    }
+
     public function route($uri, $method) {
         foreach($this->routes as $route) {
-            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+            $pattern = $this->createRoutePattern($route['uri']);
+            if (preg_match($pattern, $uri, $matches) && $route['method'] === strtoupper($method)) {
+                array_shift($matches);
+
                 return require base_path('Http/Controllers/' . $route['controller']);
             }
         }
-        $this->abort();
+        Router::abort();  // Se nenhuma rota for encontrada
     }
 
-    protected function abort($code = 404)
+    private function createRoutePattern($route) {
+        return "@^" . preg_replace('/{[\w\d]+}/', '([\w\d-]+)', $route) . "$@D";
+    }
+
+    public static function abort($code = 404)
     {
         http_response_code($code);
 
@@ -37,5 +48,4 @@ class Router
 
         die();
     }
-
 }

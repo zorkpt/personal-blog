@@ -5,7 +5,10 @@ use Core\Router;
 const BASE_DIR = __DIR__ . '../../';
 
 require BASE_DIR . '/Core/Router.php';
+require BASE_DIR . '/Core/Database.php';
 require BASE_DIR . '/Core/functions.php';
+require base_path('Core/Post.php');
+
 
 $router = new Router();
 require BASE_DIR . 'routes.php';
@@ -16,5 +19,5 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 
-    $router->route($uri, $method);
+$router->route($uri, $method);
 
