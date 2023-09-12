@@ -1,5 +1,4 @@
 <div class="text-white space-y-16 mt-28  max-w-xl">
-    <!--TODO: From the blog tem de ser dinamico -->
     <h1 class="text-2xl mb-1"><?= $heading ?> </h1>
 
     <?php foreach ($posts as $post): ?>
@@ -14,8 +13,8 @@
             </div>
             <?php $excerpt = substr($post['content'], 0, 200) . '...'; ?>
 
-            <p class="mt-2 text-lg mb-4"><?= $excerpt ?></p>
-            <div class="flex items-center space-x-4">
+            <p class="mt-2 text-lg mb-4"><?= Parsedown::instance()->text($excerpt); ?></p>
+            <div class="flex items-center mt-3 space-x-4">
                 <img src="<?php echo '/avatar.jpeg'  ?>" alt="Avatar" class="w-7 h-7 rounded-full">
                 <div class="text-sm font-semibold pr-7"><?= $post['user_name'] ?></div>
                 <img src="/calendar.svg" alt="calendar" class="w-6 h-6 ">

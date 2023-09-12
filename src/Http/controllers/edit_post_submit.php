@@ -11,7 +11,7 @@ if (!is_logged()) {
 }
 
 $title = htmlspecialchars($_POST['title']);
-$content = htmlspecialchars($_POST['content']);
+$content = $_POST['content'];
 $post_id = $_POST['post_id'];
 $tags = $_POST['tags'];
 Post::updatePost($title, $content, $post_id, $tags);
@@ -19,5 +19,3 @@ Post::updatePost($title, $content, $post_id, $tags);
 $_SESSION['success'] = 'Post edited successfully';
 header('Location: /admin');
 exit();
-
-

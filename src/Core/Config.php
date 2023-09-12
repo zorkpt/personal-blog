@@ -7,11 +7,11 @@ class Config {
     public $dbname;
     public $charset;
 
-    public function __construct($host = 'mysql', $dbname = 'blog', $charset = 'utf8')
+    public function __construct()
     {
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->charset = $charset;
+        $this->host =  $_ENV['DB_HOST'];
+        $this->dbname = $_ENV['DB_NAME'];
+        $this->charset = $_ENV['DB_CHARSET'];
     }
 
 }

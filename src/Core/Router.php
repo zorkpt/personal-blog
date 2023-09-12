@@ -6,37 +6,41 @@ class Router
 {
     protected array $routes = [];
 
-    public function add($method, $controller, $uri) {
+    public function add($method, $controller, $uri)
+    {
         $this->routes[] = [
-            'method' => $method,
+            'method'     => $method,
             'controller' => $controller,
-            'uri' => $uri
+            'uri'        => $uri
         ];
 
         return $this;
     }
 
-    public function get($uri, $controller) {
+    public function get($uri, $controller)
+    {
         return $this->add('GET', $controller, $uri);
     }
 
-    public function post($uri, $controller) {
+    public function post($uri, $controller)
+    {
         return $this->add('POST', $controller, $uri);
     }
 
-    public function route($uri, $method) {
-        foreach($this->routes as $route) {
+    public function route($uri, $method)
+    {
+        foreach ($this->routes as $route) {
             $pattern = $this->createRoutePattern($route['uri']);
             if (preg_match($pattern, $uri, $matches) && $route['method'] === strtoupper($method)) {
                 array_shift($matches);
-
                 return require base_path('Http/Controllers/' . $route['controller']);
             }
         }
-        Router::abort();  // Se nenhuma rota for encontrada
+        Router::abort();  // if no Route is found
     }
 
-    private function createRoutePattern($route) {
+    private function createRoutePattern($route)
+    {
         return "@^" . preg_replace('/{[\w\d]+}/', '([\w\d-]+)', $route) . "$@D";
     }
 

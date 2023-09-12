@@ -1,0 +1,17 @@
+{
+    "name": "hugopocas/personal-blog",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "erusev/parsedown": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hugopocas\\PersonalBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hugo Pocas"
+        }
+    ]
+}

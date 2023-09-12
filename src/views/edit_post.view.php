@@ -15,7 +15,7 @@ require('partials/admin_nav.php');
 
     <div class="mb-4">
         <label for="tags" class="block text-sm font-medium">Tags</label>
-        <input type="text" name="tags" id="tags" value="<?= $tags ?>" class="text-black mt-1 p-2 w-full border rounded-md">
+        <input type="text" name="tags" id="tags" value="<?= $tags ?>" class="whitespace-pre-line text-black mt-1 p-2 w-full border rounded-md">
     </div>
 
     <div class="mb-4">

@@ -19,7 +19,7 @@ require('partials/admin_nav.php');
 
     <div class="mb-4">
         <label for="content" class="block text-sm font-medium">Text</label>
-        <textarea name="content" rows="10" id="content" class="text-black mt-1 p-2 w-full border rounded-md"></textarea>
+        <textarea name="content" rows="10" id="content" class="whitespace-pre-line text-black mt-1 p-2 w-full border rounded-md"></textarea>
     </div>
     <input type="hidden" name="author_id" value="<?= $_SESSION['user_id'] ?>">
     <button type="submit" class="px-4 py-2 bg-white text-black rounded-md hover:bg-blue-600">Submit</button>
