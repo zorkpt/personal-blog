@@ -19,10 +19,8 @@ class Database
         ]);
     }
 
-    public function query($query, $params = [])
+    public function query($query, $params = []): static
     {
-        $this->statement = $this->connection->quote($query);
-
         $this->statement = $this->connection->prepare($query);
 
         $this->statement->execute($params);

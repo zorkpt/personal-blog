@@ -7,5 +7,5 @@
     <script src="/js/mastodonShare.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="bg-black h-screen">
-<div class="container mx-auto p-20 h-full">
+<body class="bg-black ">
+<div class="container mx-auto px-4 py-6 sm:px-6 lg:px-8">

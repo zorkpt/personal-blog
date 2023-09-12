@@ -1,7 +1,6 @@
 <?php
 const BASE_DIR = __DIR__ . '../../';
 require '../../vendor/autoload.php';
-
 use Core\Router;
 
 $parse = new Parsedown();
