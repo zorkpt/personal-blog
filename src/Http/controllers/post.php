@@ -1,7 +1,9 @@
 <?php
 use Core\Post;
 use Core\Database;
+use League\CommonMark\CommonMarkConverter;
 
+$converter = new CommonMarkConverter();
 $slug = $matches[0];
 
 $post = Post::findPostBySlug($slug);
@@ -16,6 +18,7 @@ $post['url'] = 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_
 view("post.view.php", [
     'heading' => $post['title'],
     'post' => $post,
-    'tags' => $tags
+    'tags' => $tags,
+    'converter' => $converter
 ]);
 

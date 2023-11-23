@@ -3,9 +3,6 @@ const BASE_DIR = __DIR__ . '../../';
 require '../../vendor/autoload.php';
 use Core\Router;
 
-$parse = new Parsedown();
-$parse->setBreaksEnabled(true);
-
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
 

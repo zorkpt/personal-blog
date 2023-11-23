@@ -17,7 +17,7 @@
                 <?php $excerpt = substr($post['content'], 0, 200) . '...'; ?>
 
                 <div class="mt-2 md:text-2xl sm:text-2xl lg:text-sm text-lg mb-4 text-center font-semibold leading-normal tracking-normal">
-                    <?= Parsedown::instance()->text($excerpt); ?>
+                    <?= $converter->convert($excerpt); ?>
                 </div>
 
                 <div class="flex items-center justify-center mt-3 space-x-2">

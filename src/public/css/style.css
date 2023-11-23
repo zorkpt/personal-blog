@@ -128,3 +128,7 @@
     border-color: #D1D5DB;
     background-color: #4B5563;
 }
+
+.parsedown a {
+    text-decoration: underline;
+}
