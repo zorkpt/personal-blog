@@ -6,7 +6,7 @@ use Core\Router;
 $parse = new Parsedown();
 $parse->setBreaksEnabled(true);
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
 
 require BASE_DIR . '/Core/Router.php';

@@ -7,7 +7,7 @@ require('partials/nav.php');
 ?>
     <div class="text-white font-roboto p-6 bg-gray-800 rounded-lg shadow-md ">
 
-        <div class="md:text-3xl sm:text-6xl font-bold mb-4 md:pl-1 md:pr-1 md:pt-1 sm:pl-6 sm:pr-6 sm:pt-6">
+        <div class="md:text-3xl sm:text-4xl font-bold mb-4 md:pl-1 md:pr-1 md:pt-1 sm:pl-6 sm:pr-6 sm:pt-6">
             <?= $post['title'] ?>
         </div>
         <div class="mb-4 mt-2 md:pl-1 md:pr-1 sm:pl-6 sm:pr-6 ">
@@ -32,7 +32,7 @@ require('partials/nav.php');
             </div>
         </div>
 
-        <div class="parsedown sm:text-4xl sm:p-6 whitespace-pre-line md:text-lg mb-8 mt-5 sm:mt-1">
+        <div class="parsedown sm:text-3xl sm:p-6 whitespace-pre-line md:text-3xl lg:text-lg mb-8 mt-5 sm:mt-1">
             <?= Parsedown::instance()->setBreaksEnabled(false)->text($post['content']); ?>
         </div>
 
